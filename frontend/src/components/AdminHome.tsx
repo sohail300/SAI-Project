@@ -46,7 +46,7 @@ export default function AdminViewRequests() {
 
   const openRejectModal = (id) => {
     setCurrentRequestId(id);
-    setApproveModal(true);
+    setRejectModal(true);
   };
 
   useEffect(() => {
@@ -128,7 +128,7 @@ export default function AdminViewRequests() {
     )
   }
 
-  const Button = ({ text, color, onClick }) => (
+  const ButtonCustom = ({ text, color, onClick }) => (
     <button
       onClick={onClick}
       className={`flex items-center justify-between w-full md:w-64 px-6 py-3 mb-4 text-lg font-semibold text-white transition-all duration-300 rounded-lg shadow-lg hover:shadow-xl ${color}`}
@@ -140,7 +140,7 @@ export default function AdminViewRequests() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-       <Button
+       <ButtonCustom
             text="LOGOUT"
             color="bg-red-500 hover:bg-red-600"
             onClick={() => {localStorage.removeItem('token'); navigate('/')}}
