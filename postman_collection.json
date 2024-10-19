@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "cb309276-e811-44b7-98ab-918fc0b749d0",
+		"name": "SAI Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "20665288"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"test@test.com\",\r\n    \"name\": \"Test\",\r\n    \"password\": \"test123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/user/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"test@test.com\",\r\n    \"password\": \"test123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/user/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Add New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/user/requests"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Requests User",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzEzMzhhZWZlNTliMmQ2MjQ5ZTI3MWUiLCJpYXQiOjE3MjkzMTk4MTksImV4cCI6MTczMDYxNTgxOX0.hnvnoH22CSApjPFcRlCd94eeSB-qQlAC3aFrYVG5SsY",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:3000/api/user/requests/"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Requests Admin",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzEzMzliZGEzYTlkNjBmZDJmZWYzMDEiLCJpYXQiOjE3MjkzMTMzNDQsImV4cCI6MTczMDYwOTM0NH0.IAQZCGQDo1W30i4Mpb5qVfWJiCjKSh0Lvim-4kUNntg",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:3000/api/admin/requests/"
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Requests",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzEzMzhhZWZlNTliMmQ2MjQ5ZTI3MWUiLCJpYXQiOjE3MjkzMjA0NjgsImV4cCI6MTczMDYxNjQ2OH0.pm7TgyblPP-wTTLTqmdIDOzaBnPSoV_7Htbf4e0IWUU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\" : \"approved\",\r\n    \"comments\": \"Good!\",\r\n    \"requestid\": \"67134c66be7e8ac0d835536e\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/admin/requests/status"
+			},
+			"response": []
+		}
+	]
+}
