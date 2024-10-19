@@ -26,13 +26,18 @@ export default function Home() {
             <div className="flex flex-col items-center space-y-4">
             <Button
             text="SEND REQUEST"
-            color="bg-blue-500 hover:bg-blue-300"
+            color="bg-blue-500 hover:bg-blue-600"
             onClick={() => navigate('/user/request')}
           />
           <Button
             text="REQUEST DETAILS"
-            color="bg-green-500 hover:bg-green-300"
+            color="bg-green-500 hover:bg-green-600"
             onClick={() => navigate('/user/request/details')}
+          />
+           <Button
+            text="LOGOUT"
+            color="bg-red-500 hover:bg-red-600"
+            onClick={() => {localStorage.removeItem('token'); navigate('/')}}
           />
             </div>
           </div>

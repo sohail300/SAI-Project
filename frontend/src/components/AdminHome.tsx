@@ -17,6 +17,8 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog"
 import { Textarea } from "@/components/ui/textarea"
+import { ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 interface Request {
   _id: string
@@ -28,6 +30,7 @@ interface Request {
 }
 
 export default function AdminViewRequests() {
+  const navigate= useNavigate();
   const [requests, setRequests] = useState<Request[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -125,8 +128,23 @@ export default function AdminViewRequests() {
     )
   }
 
+  const Button = ({ text, color, onClick }) => (
+    <button
+      onClick={onClick}
+      className={`flex items-center justify-between w-full md:w-64 px-6 py-3 mb-4 text-lg font-semibold text-white transition-all duration-300 rounded-lg shadow-lg hover:shadow-xl ${color}`}
+    >
+      {text}
+      <ArrowRight size={24} />
+    </button>
+  );
+
   return (
     <div className="container mx-auto px-4 py-8">
+       <Button
+            text="LOGOUT"
+            color="bg-red-500 hover:bg-red-600"
+            onClick={() => {localStorage.removeItem('token'); navigate('/')}}
+          />
       <Card className="w-full">
         <CardHeader>
           <CardTitle className="text-2xl font-bold">All User Requests</CardTitle>
